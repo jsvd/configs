@@ -23,7 +23,6 @@ set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
 set smarttab
-set expandtab
 
 " Visual
 set showmatch  " Show matching brackets.
@@ -42,21 +41,6 @@ set grepformat=%f:%l:%m
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-
-"FuzzyFinder
-"http://github.com/jamis/fuzzy_file_finder/
-"let g:fuzzy_ignore = "*.log,*.png,*.jpg,*.sw*"
-"let g:fuzzy_matching_limit = 50
-"map <tab> :FuzzyFinderTextFile<CR>
-"map <leader>b :FuzzyFinderBuffer<CR>
-
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-  colorscheme ir_black
-else
-  colorscheme default
-endif
-
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -68,36 +52,17 @@ autocmd BufReadPost *
 autocmd FileType ruby let b:surround_35 = "#{\r}"
 autocmd FileType ruby let b:surround_58 = ":\r"
 
-
-"autocmd Filetype ruby source ~/.vim/ruby-macros.vim
-
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
 
-
-" Some tricks for mutt
-" F1 through F3 rewraps paragraphs
-augroup MUTT
-  au BufRead ~/.mutt/temp/mutt* set spell " <-- vim 7 required
-augroup END
-
-set gfn=ProggyCleanTTSZ\ 12
 set go=aegimrLtT
 
-if has("gui_running")
-  let moria_style = 'dark'
-  colorscheme moria
-else
-  colorscheme default
-endif
+let g:solarized_termcolors=16
+colorscheme solarized
+set background=dark
 
-let g:speckyBannerKey = "<C-S>b"
-let g:speckyQuoteSwitcherKey = "<C-S>'"
-let g:speckyRunRdocKey = "<C-S>r"
-let g:speckySpecSwitcherKey = "<C-S>x"
-let g:speckyRunSpecKey = "<C-S>s"
-let g:speckyRunSpecCmd = "spec -fs -r loadpath.rb"
-let g:speckyRunRdocCmd = "fri -L -f plain"
-let g:speckyWindowType = 2
+au BufNewFile,BufRead *.epl set filetype=sql
 
+call pathogen#infect()
+call pathogen#helptags()
