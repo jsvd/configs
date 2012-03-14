@@ -1,0 +1,6 @@
+alias vi=vim
+alias missing_qa="gitk qa..master"
+alias last_commits="git lg | head -n 30"
+alias promote="git checkout qa && git merge master && git push"
+alias compile_esper="mvn clean dependency:copy-dependencies compile assembly:single"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
