@@ -66,3 +66,6 @@ au BufNewFile,BufRead *.epl set filetype=sql
 
 call pathogen#infect()
 call pathogen#helptags()
+
+map ` :CommandT<CR>
+let g:CommandTMatchWindowAtTop = 1
