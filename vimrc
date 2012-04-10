@@ -58,10 +58,6 @@ set mouse=a  " Mouse in all modes
 
 set go=aegimrLtT
 
-let g:solarized_termcolors=16
-colorscheme solarized
-set background=dark
-
 au BufNewFile,BufRead *.epl set filetype=sql
 
 call pathogen#infect()
@@ -69,3 +65,7 @@ call pathogen#helptags()
 
 map ` :CommandT<CR>
 let g:CommandTMatchWindowAtTop = 1
+
+set t_CO=256
+colorscheme solarized
+set background=dark
