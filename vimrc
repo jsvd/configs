@@ -66,6 +66,6 @@ call pathogen#helptags()
 map ` :CommandT<CR>
 let g:CommandTMatchWindowAtTop = 1
 
-set t_CO=256
+set t_Co=256
 colorscheme solarized
 set background=dark
