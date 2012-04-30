@@ -63,8 +63,8 @@ au BufNewFile,BufRead *.epl set filetype=sql
 call pathogen#infect()
 call pathogen#helptags()
 
-map ` :CommandT<CR>
-let g:CommandTMatchWindowAtTop = 1
+let g:ctrlp_map = '`'
+let g:ctrlp_match_window_bottom = 0
 
 set t_Co=256
 colorscheme solarized
