@@ -67,8 +67,7 @@ let g:ctrlp_map = '`'
 let g:ctrlp_match_window_bottom = 0
 
 set t_Co=256
-colorscheme solarized
-set background=dark
+colorscheme Tomorrow-Night
 
 "------------------------------------------------------------
 " CtrlP
