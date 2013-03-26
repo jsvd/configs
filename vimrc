@@ -32,7 +32,7 @@ set mat=5  " Bracket blinking.
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
-"set statusline=%{GitBranch()}
+set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)\ %{fugitive#statusline()}
 
 set grepprg=ack
 set grepformat=%f:%l:%m
@@ -63,17 +63,37 @@ au BufNewFile,BufRead *.epl set filetype=sql
 call pathogen#infect()
 call pathogen#helptags()
 
-let g:ctrlp_map = '`'
-let g:ctrlp_match_window_bottom = 0
-
+" set theme
 set t_Co=256
 colorscheme Tomorrow-Night
+
+" color useless whitespace
+highlight RedundantWhitespace ctermbg=red guibg=red
+match RedundantWhitespace /\s\+$\|\t/
+
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;gray\x7"
+  silent !echo -ne "\033]12;gray\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
+
+let g:NERDTreeDirArrows=0
 
 "------------------------------------------------------------
 " CtrlP
 "------------------------------------------------------------
+" Remap ctrlp trigger key
+let g:ctrlp_map = '`'
+
+" make ctrlp show up on top
+let g:ctrlp_match_window_bottom = 0
 " Set the max files
-let g:ctrlp_max_files = 10000
+let g:ctrlp_max_files = 5000
 
 " Optimize file searching
 if has("unix")
