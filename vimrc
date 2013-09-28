@@ -63,7 +63,6 @@ au BufNewFile,BufRead *.epl set filetype=sql
 call pathogen#infect()
 call pathogen#helptags()
 
-" set theme
 set t_Co=256
 colorscheme Tomorrow-Night
 

@@ -6,20 +6,20 @@ XTerm*loginShell:true
 
 XLock.mode: xjack
 
-URxvt*font: -windows-proggycleansz-medium-r-normal--13-80-96-96-c-70-iso8859-1
-URxvt*boldFont: -windows-proggycleansz-medium-r-normal--13-80-96-96-c-70-iso8859-1
-!URxvt*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-15
-!URxvt*boldFont: -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
+!URxvt*font: -windows-proggycleansz-medium-r-normal--13-80-96-96-c-70-iso8859-1
+!URxvt*boldFont: -windows-proggycleansz-medium-r-normal--13-80-96-96-c-70-iso8859-1
+URxvt*font: -zevv-peep-medium-r-normal--20-175-75-75-c-100-iso8859-15
+URxvt*boldFont: -zevv-peep-medium-r-normal--20-175-75-75-c-100-iso8859-15
 URxvt*saveLines: 32767
 URxvt*scrollBar: false
-URxvt*loginShell: true
+URxvt*loginShell: false
 URxvt*termName: rxvt
 URxvt*secondaryScroll: true
 URxvt*urlLauncher: /usr/local/bin/firefox3
 URxvt*matcher.button: 1
 URxvt*keysym.C-u: perl:matcher
 URxvt*urgentOnBell: true
-URxvt*perl-ext-common: matcher,selection-popup,option-popup,searchable-scrollback,readline
+URxvt*perl-ext-common: matcher,selection-popup,option-popup,searchable-scrollback,readline,clipboard
 
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
